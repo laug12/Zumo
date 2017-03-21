@@ -17,10 +17,10 @@ public class Main {
         el precio del litro es 2€*/
         unDeposito= new Zumo(20,2,"Pomelo",40);
         
-        acciones_Zumo(unDeposito);
+        acciones_Zumo(unDeposito, null);
     }
 
-    private static void acciones_Zumo(Zumo unDeposito) {
+    private static void acciones_Zumo(Zumo unDeposito, Double peso) {
         int relleno;
         try {
             System.out.println("Vamos a tomar zumo");

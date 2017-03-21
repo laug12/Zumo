@@ -28,7 +28,7 @@ public class Zumo {
     
     /*Método que permite consultar el contenido actual que tiene el deposito*/
     public int obtenerLitros(){
-        return litros;
+        return getLitros();
     }
     
     
@@ -40,11 +40,11 @@ public class Zumo {
             throw new Exception("Es necesaria una cantidad positiva para sacar zumo");
         }
 
-        if (dinero <(litros/precio_litro)) {
+        if (dinero <(litros/getPrecio_litro())) {
             throw new Exception("No tiene suficiente dinero");
         }
         
-            this.litros =this.litros + litros;
+        this.setLitros(this.getLitros() + litros);
     }
 
     
@@ -53,13 +53,69 @@ public class Zumo {
     public void rellenar(int litros) throws Exception
 
 {
-	if ((this.litros + litros)>this.litros_max )
+	if ((this.getLitros() + litros)>this.getLitros_max() )
         {throw new Exception("No se puede sobrepasar la capacidad del depósito");}	
 		
 		
-	this.litros=this.litros - litros;
+        this.setLitros(this.getLitros() - litros);
 	
 }
+
+    /**
+     * @return the litros
+     */
+    public int getLitros() {
+        return litros;
+    }
+
+    /**
+     * @param litros the litros to set
+     */
+    public void setLitros(int litros) {
+        this.litros = litros;
+    }
+
+    /**
+     * @return the precio_litro
+     */
+    public int getPrecio_litro() {
+        return precio_litro;
+    }
+
+    /**
+     * @param precio_litro the precio_litro to set
+     */
+    public void setPrecio_litro(int precio_litro) {
+        this.precio_litro = precio_litro;
+    }
+
+    /**
+     * @return the sabor
+     */
+    public String getSabor() {
+        return sabor;
+    }
+
+    /**
+     * @param sabor the sabor to set
+     */
+    public void setSabor(String sabor) {
+        this.sabor = sabor;
+    }
+
+    /**
+     * @return the litros_max
+     */
+    public int getLitros_max() {
+        return litros_max;
+    }
+
+    /**
+     * @param litros_max the litros_max to set
+     */
+    public void setLitros_max(int litros_max) {
+        this.litros_max = litros_max;
+    }
 
 }
 
